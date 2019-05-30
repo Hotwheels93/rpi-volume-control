@@ -3,7 +3,7 @@ Raspberry Pi volume control using rotary encoder KY040 and ZeroSeg 7 segment dis
 
 Used Hardware
 
-- ZeroSeg 8 charakter 7 segment display
+- ZeroSeg 8 character 7 segment display
 - KY040 rotary encoder with push button function
 
 # Installation
@@ -63,10 +63,39 @@ OR
 
 Get a GPIO exander or multiplexer, google search delivers lots of results.
 
-4 Clone git and run
+4. Check audio card
+
+If you use want to use onboard audio hit:
+
+amixer -c 0 controls
+
+If you want to use an external usb sound card hit:
+
+amixer -c 1 controls
+
+Should output results like this:
+
+numid=3,iface=MIXER,name='PCM Playback Switch'
+numid=4,iface=MIXER,name='PCM Playback Volume'      <== Choose this (script default, edit if necessary)
+numid=2,iface=PCM,name='Capture Channel Map'
+numid=1,iface=PCM,name='Playback Channel Map'
+
+Note the device descriped with "Playback Volume", here numid = 4
+
+Edit volumectl.py:
+
+To set the right sound card change the lines 25,41 and 76 to with your card number and id:
+
+sudo nano volumectl.py
+
+Example: ['amixer','q', '-c', '1', 'cset', 'numid=4', str(volume)] (default)
+
+
+4 Clone git and check audio card
 
 git clone https://github.com/Hotwheels93/rpi-volume-control
 cd rpi-volume-control
+
 python volumectl.py
 
 
