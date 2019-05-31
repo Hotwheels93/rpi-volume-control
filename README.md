@@ -8,7 +8,9 @@ Raspberry Pi volume control using rotary encoder KY040 and ZeroSeg 7 segment dis
 
 # Installation
 
-### 1. Open terminal and be sure your system is up to date and that you have Python 2.7 installed ###
+### 1. Update dependencies ###
+
+Open terminal
 
 > sudo apt-get update && apt-get upgrade 
 
