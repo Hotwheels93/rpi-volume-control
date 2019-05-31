@@ -48,11 +48,11 @@ GND pin is the pin under the the second 5V pin
 
 **Schematic:**
 
-> 3V    5V                    <== VCC
-IO2   5V              
-IO3   GND                   <== GND (choose any if already in use)
-IO4   14
-  ... 
+> 3V       5V                    <== VCC
+> IO2      5V              
+> IO3      GND                   <== GND (choose any if already in use)
+> IO4      14
+   >  ... 
 
 ### Attention ###
 
