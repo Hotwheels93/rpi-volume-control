@@ -46,9 +46,9 @@ GND pin is the pin under the the second 5V pin
 
 **Schematic:**
 
-3V    5V                    **<== VCC**
+3V    5V                    <== VCC
 IO2   5V              
-IO3   GND                   **<== GND (choose any if already in use)**
+IO3   GND                   <== GND (choose any if already in use)
 IO4   14
   ... 
 
@@ -67,36 +67,37 @@ Get a GPIO exander or multiplexer, google search delivers lots of results.
 
 If you use want to use onboard audio enter:
 
-> **amixer -c 0 controls**
+> amixer -c 0 controls
 
 If you want to use an external usb sound card enter:
 
-> **amixer -c 1 controls**
+> amixer -c 1 controls
 
 Should output results like this:
 
 > numid=3,iface=MIXER,name='PCM Playback Switch'
-numid=4,iface=MIXER,name='PCM Playback Volume'      **<== Script default, change if necessary**
+numid=4,iface=MIXER,name='PCM Playback Volume'      <== Script default, change if necessary
 numid=2,iface=PCM,name='Capture Channel Map'
 numid=1,iface=PCM,name='Playback Channel Map'
 
 **Note the device descriped with "Playback Volume", here numid = 4**
 
-**Edit volumectl.py:**
 
-To set the right sound card change the lines ***25,41 and 76*** to with your card number and id:
+### 5. Clone and config ###
 
-> **sudo nano volumectl.py**
+ > git clone https://github.com/Hotwheels93/rpi-volume-control
+ > cd rpi-volume-control
+ 
+ **Edit volumectl.py:** 
+
+To set the right sound card change the lines ***25, 41 and 76*** to with your card number and id:
+
+> sudo nano volumectl.py
 
 Example: ['amixer','q', '-c', '1', 'cset', 'numid=4', str(volume)] (default)
-
-
-### 4 Clone git and check audio card ###
-
- >**git clone https://github.com/Hotwheels93/rpi-volume-control***
- > cd rpi-volume-control
-
- > **python volumectl.py
+ 
+ **Run:**
+ > python volumectl.py
 
 
 ### 5 Autostart (Additional) ###
