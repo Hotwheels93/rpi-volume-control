@@ -58,14 +58,6 @@ GND pin is the pin under the the second 5V pin
 
 
 
-| Pin | Pin |  Description |
-| --- | --- | --- | 
-|3V| 5V|     <== VCC |
-|IO2| 5V   ||             
-|IO3| GND  | <== GND (choose any if already in use) |
-|IO4| IO14 ||
-|...|...|| 
-
 ### Attention ###
 
 **You have to be careful when you connect the pins to the RPi. Do not miscalculate while counting the pins. Do not connect wrong pins, this could damage your RPi seriously. I am not responsible for any damage caused by wrong wiring or use of this tutorial.**
