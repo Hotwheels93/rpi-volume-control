@@ -3,8 +3,8 @@ Raspberry Pi volume control using rotary encoder KY040 and ZeroSeg 7 segment dis
 
 Used Hardware
 
-- ZeroSeg 8 character 7 segment display
-- KY040 rotary encoder with push button function
+- * *ZeroSeg* * 8 character 7 segment display
+- * *KY040 rotary encoder* * with push button function
 
 # Installation
 
@@ -21,7 +21,7 @@ https://cdn.shopify.com/s/files/1/0176/3274/files/ZeroSeg_User_Guide_1.2.pdf
 To use the left GPIO pins which are unfortunately not accessible because ZeroSeg covers all 40 pins you have to different options.
 
 
-### 3.1 Connect the used GPIO pins manually using the official pinout from ZeroSeg manual###
+### 3.1 Connect the used GPIO pins manually using the official pinout from ZeroSeg manual ###
 
 | Name | Description | Physical Pin | RPi Function |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ To use the left GPIO pins which are unfortunately not accessible because ZeroSeg
 |SW2| Right Switch/Button |37 | GPIO 26|
 
 
-### Power supply:###
+### Power supply: ###
 
 The manual of ZeroSeg gives the following hint:
 
@@ -52,7 +52,7 @@ IO3   GND                   **<== GND (choose any if already in use)**
 IO4   14
   ... 
 
-### Attetion###
+### Attetion ###
 
 **You have to be careful when you connect the pins to the RPi. Do not miscalculate while counting the pins. Do not connect wrong pins, this could damage your RPi seriously. I am not responsible for any damage caused by wrong wiring or use of this tutorial.**
 
@@ -75,8 +75,8 @@ If you want to use an external usb sound card hit:
 
 Should output results like this:
 
-numid=3,iface=MIXER,name='PCM Playback Switch'
-numid=4,iface=MIXER,name='PCM Playback Volume'      <== Choose this (script default, edit if necessary)
+> numid=3,iface=MIXER,name='PCM Playback Switch'
+numid=4,iface=MIXER,name='PCM Playback Volume'      **<== Script default, change if necessary**
 numid=2,iface=PCM,name='Capture Channel Map'
 numid=1,iface=PCM,name='Playback Channel Map'
 
