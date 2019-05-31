@@ -1,16 +1,16 @@
 # rpi-volume-control
 Raspberry Pi volume control using rotary encoder KY040 and ZeroSeg 7 segment display
 
-Used Hardware
+### Hardware: ###
 
-- * *ZeroSeg* * 8 character 7 segment display
-- * *KY040 rotary encoder* * with push button function
+- ZeroSeg  8 character 7 segment display
+- KY040 rotary encoder with push button function
 
 # Installation
 
 ### 1. Open terminal and be sure your system is up to date and that you have Python 2.7 installed ###
 
-**sudo apt-get update && apt-get upgrade
+> sudo apt-get update && apt-get upgrade 
 
 ### 2. Setup ZeroSeg as descriped in the manual: ###
 
@@ -36,7 +36,7 @@ To use the left GPIO pins which are unfortunately not accessible because ZeroSeg
 
 The manual of ZeroSeg gives the following hint:
 
-"Power and GND lines have not been documented, however it's worth mentioning that the MAX7219CNG chip uses the 5V line, whilst the switches use 3.3V"
+> Power and GND lines have not been documented, however it's worth mentioning that the MAX7219CNG chip uses the 5V line, whilst the switches use 3.3V
 
 For this I connected all of the 40 GPIO pins with male-female wires and simply did some trial and error to check which pins are used for power supply. The result is the following:
 
@@ -52,12 +52,12 @@ IO3   GND                   **<== GND (choose any if already in use)**
 IO4   14
   ... 
 
-### Attetion ###
+### Attention ###
 
 **You have to be careful when you connect the pins to the RPi. Do not miscalculate while counting the pins. Do not connect wrong pins, this could damage your RPi seriously. I am not responsible for any damage caused by wrong wiring or use of this tutorial.**
 
 
-### OR###
+### OR ###
 
 ### 3.2 Easy but needs additional hardware: ###
 
@@ -65,13 +65,13 @@ Get a GPIO exander or multiplexer, google search delivers lots of results.
 
 ### 4. Check audio card ###
 
-If you use want to use onboard audio hit:
+If you use want to use onboard audio enter:
 
-**amixer -c 0 controls**
+> **amixer -c 0 controls**
 
-If you want to use an external usb sound card hit:
+If you want to use an external usb sound card enter:
 
-**amixer -c 1 controls**
+> **amixer -c 1 controls**
 
 Should output results like this:
 
@@ -86,25 +86,25 @@ numid=1,iface=PCM,name='Playback Channel Map'
 
 To set the right sound card change the lines ***25,41 and 76*** to with your card number and id:
 
-**sudo nano volumectl.py**
+> **sudo nano volumectl.py**
 
 Example: ['amixer','q', '-c', '1', 'cset', 'numid=4', str(volume)] (default)
 
 
 ### 4 Clone git and check audio card ###
 
-**git clone https://github.com/Hotwheels93/rpi-volume-control***
-cd rpi-volume-control
+ >**git clone https://github.com/Hotwheels93/rpi-volume-control***
+ > cd rpi-volume-control
 
-**python volumectl.py
+ > **python volumectl.py
 
 
-### 5 Autostart (Additional)###
+### 5 Autostart (Additional) ###
 
 To enable autostart open terminal and type
 
-**crontab -e**
+> **crontab -e**
 
-@reboot sudo python /home/pi/rpi-volume-control/volumectl.py
+> @reboot sudo python /home/pi/rpi-volume-control/volumectl.py
 
 
