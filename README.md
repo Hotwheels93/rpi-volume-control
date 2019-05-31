@@ -8,15 +8,15 @@ Used Hardware
 
 # Installation
 
-### 1. Open terminal and be sure your system is up to date and that you have Python 2.7 installed###
+### 1. Open terminal and be sure your system is up to date and that you have Python 2.7 installed ###
 
 **sudo apt-get update && apt-get upgrade
 
-### 2. Setup ZeroSeg as descriped in the manual:###
+### 2. Setup ZeroSeg as descriped in the manual: ###
 
 https://cdn.shopify.com/s/files/1/0176/3274/files/ZeroSeg_User_Guide_1.2.pdf
 
-### 3. Preparing GPIO connection###
+### 3. Preparing GPIO connection ###
 
 To use the left GPIO pins which are unfortunately not accessible because ZeroSeg covers all 40 pins you have to different options.
 
@@ -91,7 +91,7 @@ To set the right sound card change the lines ***25,41 and 76*** to with your car
 Example: ['amixer','q', '-c', '1', 'cset', 'numid=4', str(volume)] (default)
 
 
-### 4 Clone git and check audio card###
+### 4 Clone git and check audio card ###
 
 **git clone https://github.com/Hotwheels93/rpi-volume-control***
 cd rpi-volume-control
