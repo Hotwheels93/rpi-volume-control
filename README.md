@@ -106,7 +106,7 @@ Example: ['amixer','q', '-c', '1', 'cset', 'numid=4', str(volume)] (default)
  > python volumectl.py
 
 
-### 5 Autostart (Additional) ###
+### 6. Autostart (Additional) ###
 
 To enable autostart open terminal and type
 
